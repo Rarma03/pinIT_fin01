@@ -1,0 +1,21 @@
+<% include ./partials/header.ejs%>
+
+<div class="w-full h-screen bg-zinc-800 px-10 py-8 text-white">
+    <div class="cards flex flex-wrap gap-10">
+        <% posts.forEach(function(val){%>
+        <div class="card ">
+            <div class="w-full h-40 rounded-md">
+                <img class="w-full h-full object-cover" src="/images/uploads/<%= val.image%>" alt="No image" onerror="this.src='https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-no-image-vector-illustration-isolated-png-image_1694547.jpg'">
+            </div>
+            <!-- <h5 class="mt-2 text-sm">Some Title which is very very very long and cant be written in one line</h5> -->
+            <h2 class="mt-2 text-xm"><%=val.title%></h2>
+            <!-- <h5 class="mt-2 text-sm truncate"><%=val.description%></h5> -->
+            <!-- <%if(val.userid.username.length != 0){%> -->
+            <h5 class="text-sm opacity-50">@<%=val.userid.username%></h5>
+            <!-- <%}%> -->
+        </div>
+        <%})%>
+    </div>
+</div>
+
+<% include ./partials/footer.ejs%>

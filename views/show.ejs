@@ -1,0 +1,18 @@
+<% include ./partials/header.ejs%>
+
+<div class="w-full h-screen bg-zinc-800 px-10 py-8 text-white">
+    <div class="cards flex flex-wrap gap-10">
+        <% user.postid.forEach(function(val){%>
+        <div class="card w-32">
+            <div class="w-full h-40 bg-zinc-200 rounded-md">
+                <img class="w-full h-full object-cover" src="/images/uploads/<%= val.image%>" alt="">
+            </div>
+            <!-- <h5 class="mt-2 text-sm">Some Title which is very very very long and cant be written in one line</h5> -->
+            <h2 class="mt-2 text-sm"><%=val.title%></h2>
+            <h5 class="mt-2 text-sm"><%=val.description%></h5>
+        </div>
+        <%})%>
+    </div>
+</div>
+
+<% include ./partials/footer.ejs%>
